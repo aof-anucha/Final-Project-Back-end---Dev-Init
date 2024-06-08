@@ -1,4 +1,3 @@
-// controllers/todoController.js
 const Todo = require('../models/todo');
 
 exports.getAllTodos = async (req, res) => {
@@ -30,15 +29,6 @@ exports.getTodo = async (req, res) => {
     }
 };
 
-// exports.updateTodo = async (req, res) => {
-//     const todo = await Todo.findOneAndUpdate(req.params.id, req.body, { new: true });
-//     if (todo && todo.user.toString() === req.userId) {
-//         res.json(todo);
-//     } else {
-//         res.status(404).send('Todo not found');
-//     }
-// };
-
 exports.updateTodo = async (req, res) => {
     const { title, description, due_date, priority } = req.body;
     try {
@@ -53,15 +43,6 @@ exports.updateTodo = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
-
-// exports.deleteTodo = async (req, res) => {
-//     const todo = await Todo.findOneAndDelete({ todo_id: req.params.id, user_id: req.userId });
-//     if (todo && todo.user.toString() === req.userId) {
-//         res.send('Todo deleted');
-//     } else {
-//         res.status(404).send('Todo not found');
-//     }
-// };
 
 exports.deleteTodo = async (req, res) => {
     try {

@@ -1,4 +1,3 @@
-// controllers/logController.js
 const Log = require('../models/log');
 
 exports.getAllLogs = async (req, res) => {
@@ -29,15 +28,6 @@ exports.createLog = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
-
-// exports.updateLog = async (req, res) => {
-//     const log = await Log.findByIdAndUpdate(req.params.id, req.body, { new: true });
-//     if (log && log.user_id.toString() === req.userId) {
-//         res.json(log);
-//     } else {
-//         res.status(404).send('Log not found');
-//     }
-// };
 
 exports.updateLog = async (req, res) => {
     const { content, date } = req.body;

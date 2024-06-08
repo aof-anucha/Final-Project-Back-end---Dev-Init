@@ -1,4 +1,3 @@
-// models/todo.js
 const mongoose = require('mongoose');
 const TodoSchema = new mongoose.Schema({
     todo_id: { type: Number, required: true, unique: true },

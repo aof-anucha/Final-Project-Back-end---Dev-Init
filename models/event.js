@@ -1,4 +1,3 @@
-// models/event.js
 const mongoose = require('mongoose');
 const EventSchema = new mongoose.Schema({
     event_id: { type: Number, required: true, unique: true },

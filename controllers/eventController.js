@@ -1,4 +1,3 @@
-// controllers/eventController.js
 const Event = require('../models/event');
 
 exports.getAllEvents = async (req, res) => {
@@ -29,16 +28,6 @@ exports.getEvent = async (req, res) => {
     }
 };
 
-
-// exports.updateEvent = async (req, res) => {
-//     const event = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
-//     if (event && event.user.toString() === req.userId) {
-//         res.json(event);
-//     } else {
-//         res.status(404).send('Event not found');
-//     }
-// };
-
 exports.updateEvent = async (req, res) => {
     const { title, description, start_date, end_date} = req.body;
     try {
@@ -53,15 +42,6 @@ exports.updateEvent = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
-
-// exports.deleteEvent = async (req, res) => {
-//     const event = await Event.findByIdAndDelete(req.params.id);
-//     if (event && event.user.toString() === req.userId) {
-//         res.send('Event deleted');
-//     } else {
-//         res.status(404).send('Event not found');
-//     }
-// };
 
 exports.deleteEvent = async (req, res) => {
     try {
