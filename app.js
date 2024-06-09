@@ -25,3 +25,5 @@ const PORT = process.env.PORT || 3000;
 mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => app.listen(PORT, () => console.log(`Server running on port ${PORT}`)))
     .catch(err => console.log(err));
+
+// module.exports = {app, mongoose}
